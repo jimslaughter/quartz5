@@ -1,7 +1,5 @@
---- 
-title: "{{title}}" 
-date: 2026-07-05 
-tags: [] 
-draft: false  
-___
+
 This is my second post.  Nothing very new here.  
+
+![[Winnie and Bean ChairsBW.jpg|387]]
+
