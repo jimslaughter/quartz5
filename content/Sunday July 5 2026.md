@@ -4,4 +4,4 @@ date: 2026-07-05
 tags: [] 
 draft: false  
 ___
-This is my second post.  Nothing very new here.  
+This is a post from Sunday July 5, 2026.  
