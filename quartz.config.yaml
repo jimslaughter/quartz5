@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: jimslaughter.github.io/quartz5
+  baseUrl: jimslaughter.github.io/quartz
   ignorePatterns:
     - private
     - templates
@@ -61,17 +61,7 @@ plugins:
   - source: github:quartz-community/obsidian-flavored-markdown
     enabled: true
     options:
-      comments: true
-      highlight: true
-      wikilinks: true
-      callouts: true
-      mermaid: true
-      parseTags: true
-      parseArrows: true
-      parseBlockReferences: true
       enableInHtmlEmbed: false
-      enableYouTubeEmbed: true
-      enableVideoEmbed: true
       enableCheckbox: true
     order: 30
   - source: github:quartz-community/github-flavored-markdown
@@ -100,7 +90,7 @@ plugins:
     enabled: false
     order: 85
   - source: github:quartz-community/hard-line-breaks
-    enabled: true
+    enabled: false
     order: 90
   - source: github:quartz-community/ox-hugo
     enabled: false
@@ -119,12 +109,7 @@ plugins:
     options: {}
     order: 45
   - source: github:quartz-community/encrypted-pages
-    enabled: true
-    options:
-      iterations: 600000
-      passwordField: password
-      unlistWhenEncrypted: false
-      outputPath: static/encryptedContentIndex.json
+    enabled: false
   - source: github:quartz-community/stacked-pages
     enabled: false
     layout:
@@ -208,27 +193,28 @@ plugins:
       priority: 35
       group: toolbar
   - source: github:quartz-community/breadcrumbs
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 5
       condition: not-index
-  - source: github:quartz-community/comments
-    enabled: true
-    options:
-      provider: giscus
-      options: {}
-    layout:
-      position: afterBody
-      priority: 10
+  
   - source: github:quartz-community/footer
-    enabled: true
+    enabled: false
     options:
       links:
         GitHub: https://github.com/jackyzha0/quartz
         Discord Community: https://discord.gg/cRFFHYye7t
   - source: github:quartz-community/recent-notes
-    enabled: false
+    enabled: true
+    options:
+      title: Recent Posts
+      limit: 5
+      linkToMore: false
+      showTags: true
+    layout:
+      position: left
+      priority: 25
   - source: github:quartz-community/spacer
     enabled: true
     options: {}
@@ -242,7 +228,7 @@ plugins:
     options: {}
     order: 50
   - source: github:quartz-community/note-properties
-    enabled: false
+    enabled: true
     options:
       includeAll: false
       includedProperties:
@@ -250,7 +236,7 @@ plugins:
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: true
+      hidePropertiesView: false
       delimiters: ---
       language: yaml
     order: 5
@@ -258,19 +244,9 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
-  - source:
-      name: quartz-themes
-      repo: github:saberzero1/quartz-themes
-      subdir: plugin
-    enabled: true
-    options:
-      theme: default
-  - source: github:quartz-community/obsidian-plugin-excalidraw
+  - source: github:quartz-community/tui
     enabled: false
-    options:
-      enableInteraction: true
-      darkMode: auto
-      exportPadding: 20
+    options: {}
     order: 50
 layout:
   groups:
