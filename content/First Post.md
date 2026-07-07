@@ -3,7 +3,7 @@ title: First Post
 date: 2026-07-05
 tags:
   - winnie
-  - bean
+  - beanie bear
 draft: false
 ---
 
